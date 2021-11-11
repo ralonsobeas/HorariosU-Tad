@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         loadBtn = findViewById(R.id.load_btn);
 
         timetable = findViewById(R.id.timetable);
-        timetable.setHeaderHighlight(2);
+        //timetable.setHeaderHighlight(2);
         initView();
     }
 
