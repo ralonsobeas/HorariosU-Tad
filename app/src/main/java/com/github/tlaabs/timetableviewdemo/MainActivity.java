@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.tlaabs.timetableview.Schedule;
+import com.github.tlaabs.timetableview.Time;
 import com.github.tlaabs.timetableview.TimetableView;
 
 import java.util.ArrayList;
@@ -27,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button loadBtn;
 
     private TimetableView timetable;
+
+    //Asignatura hardcoded
+    private Schedule schedule;
+    //--
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         saveBtn = findViewById(R.id.save_btn);
         loadBtn = findViewById(R.id.load_btn);
 
+        //Quitar visibilidad botones
+        addBtn.setVisibility(View.GONE);
+        clearBtn.setVisibility(View.GONE);
+        saveBtn.setVisibility(View.GONE);
+        loadBtn.setVisibility(View.GONE);
+        //--
+
         timetable = findViewById(R.id.timetable);
+
+        //Quitar conejo
         //timetable.setHeaderHighlight(2);
         initView();
     }
@@ -63,6 +78,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(i,REQUEST_EDIT);
             }
         });
+
+        //Asignatura hardcoded
+        schedule = new Schedule();
+        schedule.setClassTitle("Proyectos 3");
+        schedule.setClassPlace("MD101");
+        schedule.setProfessorName("Teresa Ramos Martín");
+        schedule.setDay(3);
+
+        Time startTime = new Time();
+        startTime.setHour(9);
+        startTime.setMinute(0);
+        schedule.setStartTime(startTime);
+
+        Time endTime = new Time();
+        endTime.setHour(11);
+        endTime.setMinute(0);
+        schedule.setEndTime(endTime);
+
+        ArrayList<Schedule> schedules = new ArrayList<Schedule>();
+        //you can add more schedules to ArrayList
+        schedules.add(schedule);
+
+        timetable.add(schedules);
+        //--
+
     }
 
     @Override

@@ -51,6 +51,12 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         this.context = this;
         deleteBtn = findViewById(R.id.delete_btn);
         submitBtn = findViewById(R.id.submit_btn);
+
+        //Hardcoded visibilidad botones
+        deleteBtn.setVisibility(View.GONE);
+        submitBtn.setVisibility(View.GONE);
+        //--
+
         subjectEdit = findViewById(R.id.subject_edit);
         classroomEdit = findViewById(R.id.classroom_edit);
         professorEdit = findViewById(R.id.professor_edit);
@@ -75,6 +81,10 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         if(mode == MainActivity.REQUEST_EDIT){
             loadScheduleData();
             deleteBtn.setVisibility(View.VISIBLE);
+
+            //Hardcoded visibilidad
+            deleteBtn.setVisibility(View.GONE);
+
         }
     }
     private void initView(){

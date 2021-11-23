@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".EditActivity">
 
-    <include layout="@layout/edit_appbar" />
+    <include layout="@layout/edit_appbar" android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
