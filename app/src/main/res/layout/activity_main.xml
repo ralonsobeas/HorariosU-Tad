@@ -34,8 +34,8 @@
             android:id="@+id/add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
-            tools:visibility="gone"/>
+            android:text="Añadir"
+            />
 
         <Button
             android:id="@+id/clear_btn"
